@@ -7,7 +7,7 @@ Abstract Factory - Padrões Criacionais  <img src="https://media.giphy.com/media
 <div align="center">
   <div><img src="files/imgs/1.png" href="https://github.com/certainlyWrong/Abstract_Factory_POO/tree/luisclicio/feat/use-case" ></div>
   <div><img src="files/imgs/2.png" href="files/seminarioPOO.pdf" ></div>
-  <div><img src="files/imgs/3.png" href="" ></div>
+  <div><img src="files/imgs/3.png" href="EXERCISE_LIST.md" ></div>
 </div>
 
 <br>
