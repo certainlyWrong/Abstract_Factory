@@ -5,9 +5,9 @@ Abstract Factory - Padrões Criacionais  <img src="https://media.giphy.com/media
 </h1>
     
 <div align="center">
-  <div><a href="src"><img src="files/imgs/1.png"></a></div>
-  <div><a href="files/seminarioPOO.pdf"><img src="files/imgs/2.png"></a></div>
-  <div><a href="EXERCISE_LIST.md"><img src="files/imgs/3.png"></a></div>
+  <a href="src"><img src="files/imgs/1.png"></a>
+  <a href="files/seminarioPOO.pdf"><img src="files/imgs/2.png"></a>
+  <a href="EXERCISE_LIST.md"><img src="files/imgs/3.png"></a>
 </div>
 
 <br>
