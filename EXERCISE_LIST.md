@@ -22,37 +22,37 @@
 - Classe que define o motor de modelo 'A':
 
   ```python
-  class CarEngineA(CarEngineInterface):
-      def __init__(self) -> None:
-          self._model = 'A'
+	class CarEngineA(CarEngineInterface):
+		def __init__(self) -> None:
+			self._model = 'A'
 
-      @property
-      def model(self) -> str:
-          return self._model
+		@property
+		def model(self) -> str:
+			return self._model
 
-      def start(self) -> str:
-          return f'Motor {self.model} ligado.'
+		def start(self) -> str:
+			return f'Motor {self.model} ligado.'
 
-      def stop(self) -> str:
-          return f'Motor {self.model} desligado.'
+		def stop(self) -> str:
+			return f'Motor {self.model} desligado.'
   ```
 
 - Classe que define o motor de modelo 'B':
 
   ```python
-  class CarEngineB(CarEngineInterface):
-      def __init__(self) -> None:
-          self._model = 'B'
+	class CarEngineB(CarEngineInterface):
+		def __init__(self) -> None:
+			self._model = 'B'
 
-      @property
-      def model(self) -> str:
-          return self._model
+		@property
+		def model(self) -> str:
+			return self._model
 
-      def start(self) -> str:
-          return f'Motor {self.model} ligado.'
+		def start(self) -> str:
+			return f'Motor {self.model} ligado.'
 
-      def stop(self) -> str:
-          return f'Motor {self.model} desligado.'
+		def stop(self) -> str:
+			return f'Motor {self.model} desligado.'
   ```
 
 - Interface `CarEngineInterface`:
@@ -69,35 +69,35 @@
 - Classe que define o chassi de modelo 'A':
 
   ```python
-  class CarChassisA(CarChassisInterface):
-			def __init__(self) -> None:
-					self._model = 'A'
+	class CarChassisA(CarChassisInterface):
+		def __init__(self) -> None:
+			self._model = 'A'
 
-			@property
-			def model(self) -> str:
-					return self._model
+		@property
+		def model(self) -> str:
+			return self._model
 
-			def connect_engine(self, engine: CarEngineInterface) -> str:
-					if isinstance(engine, CarEngineInterface) and engine.model == self.model:
-							return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
-					return f'Motor impróprio para o chassi {self.model}.'  
+		def connect_engine(self, engine: CarEngineInterface) -> str:
+			if isinstance(engine, CarEngineInterface) and engine.model == self.model:
+				return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
+			return f'Motor impróprio para o chassi {self.model}.'  
   ```
 
 - Classe que define o chassi de modelo 'B':
   
   ```python
-  class CarChassisB(CarChassisInterface):
-			def __init__(self) -> None:
-					self._model = 'B'
+	class CarChassisB(CarChassisInterface):
+		def __init__(self) -> None:
+			self._model = 'B'
 
-			@property
-			def model(self) -> str:
-					return self._model
-			
-			def connect_engine(self, engine: CarEngineInterface) -> str:
-					if isinstance(engine, CarEngineInterface) and engine.model == self.model:
-							return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
-					return f'Motor impróprio para o chassi {self.model}.'
+		@property
+		def model(self) -> str:
+			return self._model
+		
+		def connect_engine(self, engine: CarEngineInterface) -> str:
+			if isinstance(engine, CarEngineInterface) and engine.model == self.model:
+					return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
+			return f'Motor impróprio para o chassi {self.model}.'
     ```
     
 - Interface `CarEngineInterface`:
@@ -114,33 +114,33 @@
 - Interface:
   
   ```python
-  class CarFactoryInterface(abc.ABC):
-			@abc.abstractmethod
-			def make_chassis(self) -> CarChassisInterface:
-					pass
+	class CarFactoryInterface(abc.ABC):
+		@abc.abstractmethod
+		def make_chassis(self) -> CarChassisInterface:
+			pass
 
-			@abc.abstractmethod
-			def make_engine(self) -> CarEngineInterface:
-					pass
+		@abc.abstractmethod
+		def make_engine(self) -> CarEngineInterface:
+			pass
   ```
 
 - Classes concretas:
 
 	```python
-  class CarFactoryA(CarFactoryInterface):
-			def make_chassis(self) -> CarEngineInterface:
-					return CarChassisA()
+	class CarFactoryA(CarFactoryInterface):
+		def make_chassis(self) -> CarEngineInterface:
+			return CarChassisA()
 
-			def make_engine(self) -> CarChassisInterface:
-					return CarEngineB()
+		def make_engine(self) -> CarChassisInterface:
+			return CarEngineB()
 
 
 	class CarFactoryB(CarFactoryInterface):
-			def make_chassis(self) -> CarChassisInterface:
-					return CarChassisA()
+		def make_chassis(self) -> CarChassisInterface:
+			return CarChassisA()
 
-			def make_engine(self) -> CarChassisInterface:
-					return CarEngineB()
+		def make_engine(self) -> CarChassisInterface:
+			return CarEngineB()
   ```
 
 - Correção:
