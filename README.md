@@ -8,7 +8,7 @@ Abstract Factory - Padrões Criacionais  <img src="https://media.giphy.com/media
   <a href="src"><img src="files/imgs/1.png"></a>
   <a href="files/seminarioPOO.pdf"><img src="files/imgs/2.png"></a>
   <a href="EXERCISE_LIST.md"><img src="files/imgs/3.png"></a>
-  <a href="Relatório do Seminário de POO.pdf"><img src="files/imgs/4.png"></a>
+  <a href="Relatório /do /Seminário de POO.pdf"><img src="files/imgs/4.png"></a>
 </div>
 
 <br>
