@@ -21,7 +21,7 @@
 
 - Classe que define o motor de modelo 'A':
 
-  ```python
+  	```python
 	class CarEngineA(CarEngineInterface):
 		def __init__(self) -> None:
 			self._model = 'A'
@@ -35,11 +35,11 @@
 
 		def stop(self) -> str:
 			return f'Motor {self.model} desligado.'
-  ```
+  	```
 
 - Classe que define o motor de modelo 'B':
 
-  ```python
+  	```python
 	class CarEngineB(CarEngineInterface):
 		def __init__(self) -> None:
 			self._model = 'B'
@@ -53,7 +53,7 @@
 
 		def stop(self) -> str:
 			return f'Motor {self.model} desligado.'
-  ```
+  	```
 
 - Interface `CarEngineInterface`:
 
@@ -68,7 +68,7 @@
 
 - Classe que define o chassi de modelo 'A':
 
-  ```python
+  	```python
 	class CarChassisA(CarChassisInterface):
 		def __init__(self) -> None:
 			self._model = 'A'
@@ -81,11 +81,11 @@
 			if isinstance(engine, CarEngineInterface) and engine.model == self.model:
 				return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
 			return f'Motor impróprio para o chassi {self.model}.'  
-  ```
+  	```
 
 - Classe que define o chassi de modelo 'B':
   
-  ```python
+  	```python
 	class CarChassisB(CarChassisInterface):
 		def __init__(self) -> None:
 			self._model = 'B'
@@ -113,7 +113,7 @@
    
 - Interface:
   
-  ```python
+  	```python
 	class CarFactoryInterface(abc.ABC):
 		@abc.abstractmethod
 		def make_chassis(self) -> CarChassisInterface:
@@ -122,7 +122,7 @@
 		@abc.abstractmethod
 		def make_engine(self) -> CarEngineInterface:
 			pass
-  ```
+  	```
 
 - Classes concretas:
 
@@ -141,7 +141,7 @@
 
 		def make_engine(self) -> CarChassisInterface:
 			return CarEngineB()
-  ```
+  	```
 
 - Correção:
 
