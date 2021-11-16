@@ -58,5 +58,69 @@
 - Interface `CarEngineInterface`:
 
   ```python
-  # Crie o código da interface aqui
+  class CarEngineInterface(abc.ABC):
+      @property
+      def model(self) -> str:
+          pass
+
+      @abc.abstractmethod
+      def start(self) -> str:
+          pass
+
+      @abc.abstractmethod
+      def stop(self) -> str:
+          pass
   ```
+2.Agora, vamos fazer o mesmo para o chassi do carro. As classes concretas dos chassis
+  de modelos 'A' e 'B' implementam a interface`CarChassisInterface`, porém ela ainda 
+  não foi criada. Sua tarefa é criá-la para definir um contrato entre as partes que 
+  utilizam objetos do tipo "chassi do carro".
+
+- Classe que define o chassi de modelo 'A':
+
+  ```python
+  class CarChassisA(CarChassisInterface):
+    def __init__(self) -> None:
+        self._model = 'A'
+
+    @property
+    def model(self) -> str:
+        return self._model
+
+    def connect_engine(self, engine: CarEngineInterface) -> str:
+        if isinstance(engine, CarEngineInterface) and engine.model == self.model:
+            return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
+        return f'Motor impróprio para o chassi {self.model}.'
+  
+  ```
+  - Classe que define o chassi de modelo 'B':
+  
+  ```python
+  class CarChassisB(CarChassisInterface):
+    def __init__(self) -> None:
+        self._model = 'B'
+
+    @property
+    def model(self) -> str:
+        return self._model
+    
+    def connect_engine(self, engine: CarEngineInterface) -> str:
+        if isinstance(engine, CarEngineInterface) and engine.model == self.model:
+            return f'Motor modelo {engine.model} conectado ao chassi {self.model}.'
+        return f'Motor impróprio para o chassi {self.model}.'
+        
+    ```
+    
+- Interface `CarEngineInterface`:
+
+  ```python
+  class CarChassisInterface(abc.ABC):
+    @property
+    def model(self) -> str:
+        pass
+
+    @abc.abstractmethod
+    def connect_engine(self, engine: CarEngineInterface) -> str:
+        pass
+  ```
+  
